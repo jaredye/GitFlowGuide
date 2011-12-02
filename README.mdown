@@ -1,4 +1,4 @@
-GitFlowGuide
+GitFlowGuide 'v0.01'
 ============
 A genereal guide on how to use the *GitFlow branching model* with *Github* integration as the version control model for Oakwood's projects.
 
