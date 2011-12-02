@@ -1,0 +1,21 @@
+GitFlowGuide 'v0.01'
+============
+A genereal guide on how to use the *GitFlow branching model* with *Github* integration as the version control model for Oakwood's projects.
+
+####The main goals of this approach are:
+* Keep our repositories history **very** organized, with easy access to specific release versions and hotfixes hot.
+* Implement a limited complexitiy branching model (GitFlow) solid and scalable enough to handle *all* our projects.
+* Provide an easy and clean way to work with externals contribuitors.
+
+####This document will cover the basics of:
+* Installing and getting started with GitFlow
+* Starting a fresh project within the GitFlow structure
+* Applying GitFlow to existing projects
+* Fetching from and pulling to *minieken* and *GitHub*
+* Keeping *minieken* and *GitHub* synced
+
+####This document will **not** cover:
+* How to use git
+* How to use GitHub
+* How to manage minieken's repositories
+
