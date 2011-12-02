@@ -1,21 +1,46 @@
-GitFlowGuide 'v0.01'
+'v0.01'
+GitFlowGuide
 ============
-A genereal guide on how to use the *GitFlow branching model* with *Github* integration as the version control model for Oakwood's projects.
+A genereal guide on how to use the GitFlow branching model with Github integration as the version control model for Oakwood's projects.
 
-####The main goals of this approach are:
-* Keep our repositories history **very** organized, with easy access to specific release versions and hotfixes hot.
-* Implement a limited complexitiy branching model (GitFlow) solid and scalable enough to handle *all* our projects.
+###The main goals of this approach are:
+* Keep our repositories history **very** organized, with easy access to specific release versions and hotfixes.
+* Implement a limited complexitiy branching model (GitFlow) solid and scalable enough to handle all our projects.
 * Provide an easy and clean way to work with externals contribuitors.
 
-####This document will cover the basics of:
-* Installing and getting started with GitFlow
-* Starting a fresh project within the GitFlow structure
-* Applying GitFlow to existing projects
-* Fetching from and pulling to *minieken* and *GitHub*
-* Keeping *minieken* and *GitHub* synced
+##Why should I read this document?
+###This document will cover the basics of:
+* Installing and getting started with git-flow.
+* Starting a fresh repository with git-flow.
+* Applying GitFlow to existing projects.
+* Fetching from and pulling to *minieken* and *GitHub*.
+* Keeping *minieken* and *GitHub* synced.
 
-####This document will **not** cover:
-* How to use git
-* How to use GitHub
-* How to manage minieken's repositories
+###This document will **not** cover:
+* How to use git.
+* How to use GitHub.
+* How to manage minieken's repositories.
+* How to manage Oakwood's account on Github.
 
+##Before starting
+It is **strongly** recomended that you have some basic notions of how git works before you start digging into anything on this page.
+There are TONS of references online, and Github also has some nice tutorials. Just google it.
+Also, feel free to chat wiht your collegues that have some experience with git. You can learn a lot from a coffee chitchat.
+
+###Must see links (seriously)
+* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) (Original blog post where GitFlow as presented)
+* [Why aren't you using Git Flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/) (Article that opened my eyes to the neat git-flow tool for using the GitFlow model)
+* [How to use a scalable Git branching model called git-flow](http://buildamodule.com/video/change-management-and-version-control-deploying-releases-features-and-fixes-with-git-how-to-use-a-scalable-git-branching-model-called-gitflow) (Nice visual representation of how GitFlow works)
+* [On the path with git-flow](http://codesherpas.com/screencasts/on_the_path_gitflow.mov) (Very didactic screen cast with real world usage of git-flow)
+
+Installing and getting started with git-flow
+--------------------------------------------
+You should follow the instructions of the [git-flow repository on GitHub](https://github.com/nvie/gitflow) for more in depth information. There you will also find a wiki and all the other goodies GitHub provides.
+
+###How to install in from the source code in a Mac
+````
+$ git clone --recursive git://github.com/nvie/gitflow.git
+$ cd gitflow
+$ sudo make install
+````
+This will install git-flow in /usr/local. And we are ready to go.
