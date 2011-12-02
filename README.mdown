@@ -1,6 +1,7 @@
-'v0.02'
 GitFlowGuide
 ============
+`Document version v0.025`
+
 A genereal guide on how to use the GitFlow branching model with Github integration as the version control model for Oakwood's projects.
 
 ###The main goals of this approach are:
@@ -33,10 +34,8 @@ Also, feel free to chat wiht your collegues that have some experience with git. 
 * [How to use a scalable Git branching model called git-flow](http://buildamodule.com/video/change-management-and-version-control-deploying-releases-features-and-fixes-with-git-how-to-use-a-scalable-git-branching-model-called-gitflow) (Nice visual representation of how GitFlow works)
 * [On the path with git-flow](http://codesherpas.com/screencasts/on_the_path_gitflow.mov) (Very didactic screen cast with real world usage of git-flow)
 
-Installing and getting started with git-flow
---------------------------------------------
-You should follow the instructions of the [git-flow repository on GitHub](https://github.com/nvie/gitflow) for more in depth information. There you will also find a wiki and all the other goodies GitHub provides.
-
+Installing git-flow
+-------------------
 ###How to install in from the source code in a Mac
 ````
 $ git clone --recursive git://github.com/nvie/gitflow.git
@@ -44,3 +43,5 @@ $ cd gitflow
 $ sudo make install
 ````
 This will install git-flow in /usr/local. And we are ready to go.
+
+For more in depth information (different platforms, etc), follow the instructions of the [git-flow repository on GitHub](https://github.com/nvie/gitflow). There you will also find a lot of extra information about the project and all the other goodies GitHub provides.
