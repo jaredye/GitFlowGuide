@@ -51,7 +51,7 @@ Initializing git-flow on a newly created repository
 ###Clone it!
 Considering a fresh repository (we are going to call it `example` here) into our internal version control server (`minieken`), clone it in your local machine with the usual:
 ````
-git clone git@minieken:example.git
+$ git clone git@minieken:example.git
 ````
 
 ###Initialize git-flow
@@ -64,15 +64,15 @@ $ git flow init
 Now git-flow is going to ask you a couple of question about the default names for the master, develop, feature, release, hotfix and support branches. As the whole point of this guide is to create a solid standard for the version control model, you should just acept the default values.
 So after you hit return a couple of times, your command line should look like this:
 ````
-No branches exist yet. Base branches must be created now.
-Branch name for production releases: [master] 
-Branch name for "next release" development: [develop] 
-How to name your supporting branch prefixes?
-Feature branches? [feature/] 
-Release branches? [release/] 
-Hotfix branches? [hotfix/] 
-Support branches? [support/] 
-Version tag prefix? []
+$ No branches exist yet. Base branches must be created now.
+$ Branch name for production releases: [master] 
+$ Branch name for "next release" development: [develop] 
+$ How to name your supporting branch prefixes?
+$ Feature branches? [feature/] 
+$ Release branches? [release/] 
+$ Hotfix branches? [hotfix/] 
+$ Support branches? [support/] 
+$ Version tag prefix? []
 ````
 You will be automatically checkout to the develop code, where you would start working normaly.
 If you did your homework and checked out all the links listed in the beggining of this document, you should be starting to realized that not all of the development should occur on the develop branch itself, develop is place where the more "general" development occurs; it is the actual "central" branch where all the other contribuiters will be actually working from, so if you need to work on bigger more specialized changes (a.k.a. releases) you should do it on a *release* branch (:D yes, thats why they exist!). We will get more into how that works in a while...
