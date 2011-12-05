@@ -117,6 +117,14 @@ $ git clone git@minieken:existingexample.git
 ````
 $ git clone git://github.com/username/existingexample.git
 ````
+###Track all the branches!
+By default `git clone` will only clone the master branch in your local copy, but you actually wan't to get a hold on and track all the remote branches (or at least both master & develop, where the action really happens). Unfortunetelly git won't provide any built-in method for doing that. But fortunetelly some good soul on stackoverflow* gave us a one line bash script alternative that will clone and track all the remote branches into local branches with the same name. So after you've cloned your repository, all you gotta do is:
+
+````
+$ for remote in `git branch -r | grep -v master `; do git checkout --track $remote ; done
+````
+
+*Here's the [original stackoverflow thread where the script was found](http://stackoverflow.com/questions/379081/track-all-remote-git-branches-as-local-branches).
 
 ###Initialize git-flow
 Now it's time to configure git-flow. Let's kick in!
