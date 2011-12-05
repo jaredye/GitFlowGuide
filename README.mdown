@@ -1,6 +1,6 @@
 GitFlowGuide
 ============
-`Tag v0.04`
+`Tag v0.041`
 
 A general guide on how to use the GitFlow branching model and Github integration as the version control model for Oakwood's projects.
 
@@ -98,6 +98,7 @@ Initializing git-flow on an existing repository
 You **must** initialize git-flow on your local copy of the repository before start using it. Luckily there isn't any prerequisite for using it on any existing repository. If the repository already uses the develop/master branches paradigm, perfect, everything will just work out of the box. However if the naming of the branches is different of the standard (develop & master) we might consider doing some adaptions.
 
 If your development branch is called anything else than 'develop' and your release branch is called anything else than 'master' (very unlikely), you have two options:
+
 * Don't rename your branches at all, and just tell git-flow to use the existing names. This might be necessary in case the repository is already being used by lots of people and renaming the branches would cause a lot of confusion between developers. Honestly that will hardly be the case within the scope of our projects.
 * Use the default naming conventions and merge your custom named develop/master branches into the standard ones.
 
