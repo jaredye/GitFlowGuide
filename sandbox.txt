@@ -1,0 +1,2 @@
+Hello! This file is just a sandbox to play around an test the Git Flow.
+Feel free to change this file as much as want to test the different version control scenarios.
