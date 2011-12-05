@@ -1,6 +1,6 @@
 GitFlowGuide
 ============
-`Tag v0.05`
+`Tag v0.06`
 
 A general guide on how to use the GitFlow branching model and Github integration as the version control model for Oakwood's projects.
 
