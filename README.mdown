@@ -146,3 +146,7 @@ Version tag prefix? []
 ````
 
 Sweet, now you will be checked out to develop and ready to go! If you are adopting  the default develop/master naming convention from your old custom one (smart move!) now is the time yo should merge your code into the new branches and celebrate!
+
+Working with multiple remotes (minieken, GitHub or anything else)
+-----------------------------------------------------------------
+Altough git-flow has some interesting built in functionality for keeping your local copy up-to-date with your remote (like fetching the origin before finishing a release or hotfix), it won't do any magical work for you specially if you are working with multiple remotes. You will still need to fetch and push stuff manually (which is very good so you can keep control of what are you doing exactly.)
