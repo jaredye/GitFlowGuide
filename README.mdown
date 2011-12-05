@@ -6,8 +6,8 @@ A general guide on how to use the GitFlow branching model and Github integration
 
 ###The main goals of this approach are:
 * Keep our repositories history **very** organized, with easy access to specific release versions and hotfixes.
-* Implement a limited complexitiy branching model (GitFlow) solid and scalable enough to handle all our projects.
-* Provide an easy and clean way to work with externals contribuitors.
+* Implement a limited complexity branching model (GitFlow) solid and scalable enough to handle all our projects.
+* Provide an easy and clean way to work with externals contributors.
 
 ##Why should I read this document?
 ###This document will cover the basics of:
@@ -24,13 +24,13 @@ A general guide on how to use the GitFlow branching model and Github integration
 * How to manage Oakwood's account on Github.
 
 ##Before starting
-It is **strongly** recomended that you have some basic notions of how git works before you start digging into anything on this page.
+It is **strongly** recommended that you have some basic notions of how git works before you start digging into anything on this page.
 There are TONS of references online, and Github also has some nice tutorials. Just google it.
-Also, feel free to chat wiht your collegues that have some experience with git. You can learn a lot from a coffee chitchat.
+Also, feel free to chat with your colleagues that have some experience with git. You can learn a lot from a coffee chitchat.
 
 ###Must see links (seriously)
 * [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) (Original blog post where GitFlow as presented)
-* [Why aren't you using Git Flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/) (Article that opened my eyes to the neat git-flow tool for using the GitFlow model, a lot of the stuff mentioned there is going to be repated here, so don't worry if you don't grasp the now)
+* [Why aren't you using Git Flow?](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/) (Article that opened my eyes to the neat git-flow tools for using the GitFlow model - a lot of the stuff mentioned there is going to be repeated here)
 * [How to use a scalable Git branching model called git-flow](http://buildamodule.com/video/change-management-and-version-control-deploying-releases-features-and-fixes-with-git-how-to-use-a-scalable-git-branching-model-called-gitflow) (Nice visual representation of how GitFlow works)
 * [On the path with git-flow](http://codesherpas.com/screencasts/on_the_path_gitflow.mov) (Very didactic screen cast with real world usage of git-flow)
 
@@ -49,11 +49,22 @@ For more in depth information (different platforms, etc), follow the instruction
 Initializing git-flow on a newly created repository
 ---------------------------------------------------
 ###Clone it!
-Considering a fresh repository (we are going to call it `example` here) into our internal version control server (`minieken`), clone it in your local machine.
+#### Internally hosted repositories (minieken)
+Considering a fresh `example` repository hosted in `minieken`, our internal version control server , clone it in your machine using the usual:
 
 ````
 $ git clone git@minieken:example.git
 ````
+
+#### Externally hosted repositories (GitHub)
+The process is exactly the same if the repository was initially available only on GitHub: 
+
+````
+$ git clone git://github.com/username/example.git
+````
+
+#### Local repositories
+Nothing forbids you to use git-flow into local-only repositories, although this is not the goal of this document (we are supposed to share the code `:)`, the process would be the same. 
 
 ###Initialize git-flow
 We have to configure git-flow for the current repository before start using it.
@@ -63,21 +74,74 @@ $ cd example
 $ git flow init
 ````
 
-Now git-flow is going to ask you a couple of question about the default names for the master, develop, feature, release, hotfix and support branches. As the whole point of this guide is to create a solid standard for the version control model, you should just acept the default values.
+Now git-flow is going to ask you a couple of question about the default names for the master, develop, feature, release, hotfix and support branches. As the whole point of this guide is to create a solid standard for the version control model, you should just accept the default values.
 So after you hit return a couple of times, your command line should look like this:
 
 ````
-$ No branches exist yet. Base branches must be created now.
-$ Branch name for production releases: [master] 
-$ Branch name for "next release" development: [develop] 
-$ How to name your supporting branch prefixes?
-$ Feature branches? [feature/] 
-$ Release branches? [release/] 
-$ Hotfix branches? [hotfix/] 
-$ Support branches? [support/] 
-$ Version tag prefix? []
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master] 
+Branch name for "next release" development: [develop] 
+How to name your supporting branch prefixes?
+Feature branches? [feature/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? []
 ````
 
-You will be automatically checked out to the develop branch, where you can start working normaly.
-If you did your homework and checked out all the links listed in the beggining of this document, you should be starting to realize that not all of the development should occur on the develop branch itself. The develop branch is place where the more general, shared development should occurs. 
+You will be automatically checked out to the develop branch, where you can start working normally.
+If you did your homework and checked out all the links listed in the beginning of this document, you should be starting to realize that not all of the development should occur on the develop branch itself. The develop branch is place where the more general, shared development should occurs. 
 Any bigger, specialized development, that is likely to be developed by only one person (a.k.a. feature) should be done in a *feature* branch (:D yes, thats why they exist!). Feature branches are only temporary and should remain local (no need to push them), unless other developers are also going to work with it.
+
+Initializing git-flow on an existing repository
+-----------------------------------------------
+You **must** initialize git-flow on your local copy of the repository before start using it. Luckily there isn't any prerequisite for using it on any existing repository. If the repository already uses the develop/master branches paradigm, perfect, everything will just work out of the box. However if the naming of the branches is different of the standard (develop & master) we might consider doing some adaptions.
+
+If your development branch is called anything else than 'develop' and your release branch is called anything else than 'master' (very unlikely), you have two options:
+* Don't rename your branches at all, and just tell git-flow to use the existing names. This might be necessary in case the repository is already being used by lots of people and renaming the branches would cause a lot of confusion between developers. Honestly that will hardly be the case within the scope of our projects.
+* Use the default naming conventions and merge your custom named develop/master branches into the standard ones.
+
+There is one very important fact to keep in mind here. As git-flow **must** be initialized and configured on any repository before being used, you need to inform all the contributors what is the naming conventions being used. Thats a good reason to justify why it's strongly recommended to stick with default names (the whole point it's to make things easier, isn't it?!).
+
+###Clone it!
+Obviously, you need to get a hold on a copy of the repository you are trying to work with. So first thing to do is to clone it.
+####From minieken
+
+````
+$ git clone git@minieken:existingexample.git
+````
+
+####From GitHub
+
+````
+$ git clone git://github.com/username/existingexample.git
+````
+
+###Initialize git-flow
+Now it's time to configure git-flow. Let's kick in!
+
+````
+$ git flow init
+````
+
+It will ask you a couple of questions, being the first ones regarding the master and develop branches. Consider what we said above regarding the naming conventions, and if you going  all standard (recommended!), all you will need to do is press return a couple of times and your command line should look similar to this:
+
+````
+Which branch should be used for bringing forth production releases?
+   - develop
+   - master
+Branch name for production releases: [master] 
+
+Which branch should be used for integration of the "next release"?
+   - develop
+Branch name for "next release" development: [develop] 
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? [] 
+````
+
+Sweet, now you will be checked out to develop and ready to go! If you are adopting  the default develop/master naming convention from your old custom one (smart move!) now is the time yo should merge your code into the new branches and celebrate!
